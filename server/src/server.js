@@ -29,16 +29,6 @@ app.get('/posts', async (req, res) => {
   }
 });
 
-app.delete('/posts/:id', async (req, res) => {
-  try {
-    const id = req.params.id;
-    await Post.findByIdAndDelete(id);
-    res.status(200).send();
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
 app.listen(4000, () => {
   console.log('Server is running on port 4000');
 });
